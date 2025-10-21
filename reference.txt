@@ -1,0 +1,49 @@
+Sections 
+	<section>...</section>
+Headings  (h1 - h6) 
+	<h1> …. </h1> 
+Paragraph
+	<p>...</p> 
+Line Break 
+	<br>....</br> 
+Images 
+	<img src="url"></img> 
+	<img src="url"/>
+Links 
+	<a href="url">...</a>
+
+Lists
+ unordered list (bullet points)
+	<ul> 
+		<li>Water</li> 
+	</ui>
+ ordered list (numbers)
+	<ol>
+		<li>Mineral</li>
+	</ol>
+ description lists
+	<dl>
+		<dt>Filtered</dt>
+		<dd>- filtered water</dd>
+	</dl>
+	
+Table
+
+
+<table>
+  <tr>
+    <th>Company</th>
+    <th>Contact</th>
+    <th>Country</th>
+  </tr>
+  <tr>
+    <td>Alfreds Futterkiste</td>
+    <td>Maria Anders</td>
+    <td>Germany</td>
+  </tr>
+  <tr>
+    <td>Centro comercial Moctezuma</td>
+    <td>Francisco Chang</td>
+    <td>Mexico</td>
+  </tr>
+</table>
