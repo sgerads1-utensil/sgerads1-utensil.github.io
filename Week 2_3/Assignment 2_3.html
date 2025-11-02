@@ -61,8 +61,6 @@ Style the elements and your layout
             text-align: center;
             font-size: 3rem;
             margin: 6px 0 18px;
-            color: var(--black);
-            text-shadow: 0 2px 0 var(--shadow);
         }
     
         .cards {
@@ -77,11 +75,8 @@ Style the elements and your layout
             min-height: 190px;
             border-radius: 18px;
             padding: 28px 18px;
-            display: flex;
             flex-direction: column;
             justify-content: center;
-            align-items: center;
-            color: var(--black);
             box-shadow: 0 10px 18px var(--black);
             font-weight: 700;
             text-align: center;
@@ -121,7 +116,7 @@ Style the elements and your layout
         }
     
          nav {
-            position: fixed;
+            position: absolute;
             left: 50%;
             transform: translateX(-50%);
             bottom: 16px;
@@ -147,18 +142,13 @@ Style the elements and your layout
         nav a {
             display: inline-block;
             text-decoration: none;
-            color: var(--black);
             font-size: 1.25rem;
             padding: 6px 12px;
             border-radius: 12px;
             font-weight: 700;
             transition: transform .12s ease, box-shadow .12s ease;
         }
-    
-        nav a:link {
-            background: transparent;
-        }
-    
+
         nav a:visited {
             opacity: 0.85;
             color: var(--gray);
@@ -188,6 +178,10 @@ Style the elements and your layout
             }
             .cards > div p {
                 font-size: 1rem;
+            }
+            nav {
+                position: fixed;
+                bottom: 25px;
             }
             nav a {
                 font-size: 1rem;
