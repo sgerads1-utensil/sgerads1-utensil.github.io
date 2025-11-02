@@ -1,0 +1,241 @@
+<!--
+Rubric: 
+
+2 points: showcase your layout using Figma (link) 
+1 point: student submits their code 
+0-17 points: Student’s assignment has demonstrated requirements of the assignment
+
+--- Requirements: ----
+
+The proper HTML structure (!Doc type, head, body etc...)  -- YOU WILL DO THIS ANYWAY
+Implement either a linked css or included css -  DO NOT USE INLINE -- ALSO YOU WILL DO THIS ANYWAY WHEN YOU CREATE YOUR FILE
+ Create a layout using either flex, grid or positions - Surprise, this will also be done anyway. 
+ Create a nav section 
+Create two sections 
+Create two parents and two children
+Implement fonts, colors and font sizes 
+Use pseudoclasses for your links 
+The layout should include more than 3 (three) divs  -- THIS WILL BE ACCOMPLISHED VERY EASILY 
+ Create elements using padding, margins and borders (hint: buttons make this really easy) 
+Position anything using one of these position types: absolute, relative or sticky
+Style the elements and your layout 
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Assignment #2_3</title>
+    </head>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap');
+
+        :root {
+            --lavender: #f0b0f0;
+            --green: #7dd689;
+            --blue: #4457fa;
+            --red: #ec4765;
+            --orange: #df9140;
+            --white: #f1f5f6;
+            --black: #111;
+            --shadow: rgba(0, 0, 0, 0.25);
+            --gray: #555;
+        }
+    
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Red Hat Display';
+            background: var(--lavender);
+            color: var(--black);
+            padding: 28px;
+            padding-bottom: 120px;
+        }
+    
+        h1 {
+            text-align: center;
+            font-size: 3rem;
+            margin: 6px 0 18px;
+            color: var(--black);
+            text-shadow: 0 2px 0 var(--shadow);
+        }
+    
+        .cards {
+            max-width: 820px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px;
+        }
+    
+        .cards>div {
+            min-height: 190px;
+            border-radius: 18px;
+            padding: 28px 18px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: var(--black);
+            box-shadow: 0 10px 18px var(--black);
+            font-weight: 700;
+            text-align: center;
+            border: 2px solid black;
+        }
+    
+        .cards>div h2 {
+            margin: 0 0 18px;
+            font-size: 2.0rem;
+            color: var(--white);
+            text-shadow: 0 2px 0 var(--shadow);
+        }
+    
+        .cards>div p {
+            margin: 0;
+            font-size: 1.4rem;
+            color: var(--black);
+        }
+    
+        .cards>div:nth-child(1) {
+            background: var(--green);
+        }
+    
+        .cards>div:nth-child(2) {
+            background: var(--blue);
+            color: var(--white);
+        }
+    
+        .cards>div:nth-child(3) {
+            background: var(--red);
+            color: var(--white);
+        }
+    
+        .cards>div:nth-child(4) {
+            background: var(--orange);
+            color: var(--black);
+        }
+    
+         nav {
+            position: fixed;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 16px;
+            background: var(--white);
+            border-radius: 18px;
+            padding: 12px 20px;
+            box-shadow: 0 12px 30px var(--shadow);
+            z-index: 200;
+            max-width: calc(100% - 40px);
+            width: auto;
+        } 
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 18px;
+            margin: 0;
+            padding: 0;
+            align-items: center;
+            justify-content: center;
+        }
+    
+        nav a {
+            display: inline-block;
+            text-decoration: none;
+            color: var(--black);
+            font-size: 1.25rem;
+            padding: 6px 12px;
+            border-radius: 12px;
+            font-weight: 700;
+            transition: transform .12s ease, box-shadow .12s ease;
+        }
+    
+        nav a:link {
+            background: transparent;
+        }
+    
+        nav a:visited {
+            opacity: 0.85;
+            color: var(--gray);
+        }
+    
+        nav a:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 8px 20px var(--shadow);
+            border: 1px solid black;
+        }
+    
+        nav a:active {
+            transform: translateY(-2px);
+            color: var(--gray);
+        }
+    
+        @media (max-width: 700px) {
+            .cards {
+                grid-template-columns: auto;
+                font-size: 1rem;
+            }
+            .header h1 {
+                font-size: 1.5rem;
+            }
+            .cards > div h2 {
+                font-size: 1.5rem;
+            }
+            .cards > div p {
+                font-size: 1rem;
+            }
+            nav a {
+                font-size: 1rem;
+                padding: 7px 6px;
+            }
+            nav ul {
+                gap: 1px;
+            }
+        }
+    </style>
+
+    <body>
+        <nav>
+            <ul>
+                <li><a href="#habitat">Habitat</a></li>
+                <li><a href="#water">Water</a></li>
+                <li><a href="#diet">Diet</a></li>
+                <li><a href="#environment">Environment</a></li>
+            </ul>
+        </nav>
+
+        <section class="header">
+            <h1>Caring for a pet Lizard!</h1>
+        </section>
+
+        <section class="content">
+            <div class="cards">
+                <div class="Habitat">
+                <h2>Habitat</h2>
+                <p>An aquarium or reptile terrarium much larger than the creature will be the best choice. <br>Add large sand, rocks, branches, and plants to create a natural environment so your reptile friend can feel at home.</p>
+                </div>  
+
+                <div class="Water">
+                <h2>Water</h2>
+                <p>Deserts are pretty dry (duh), but water is still important to them. <br>Give them a shallow dish of fresh water for drinking and soaking. Change the water regularly to keep it clean.</p>
+                </div>
+
+                <div class="Diet">
+                <h2>Diet</h2>
+                <p>I hope nobody is feeding them cheese burgers! Feed your lizard a balanced diet of insects, fruits, and vegetables. Some are Insectivorous, Herbivores, and even Omnivorous. Do your research! <br>Dust food with calcium powder for added nutrition if needed.</p>
+                </div>
+
+                <div class="Environment">
+                <h2>Environment</h2>
+                <p>Don't just put them in a room that feels warm to you! Every lizard is different, so it's important to research their specific needs. <br>Typically, you should maintain a warm and humid environment that changes day and night. Use a heat lamp to create a basking area and mist the enclosure regularly.</p>
+                </div>
+            </div>
+        </section>
+
+    </body>
+</html>
