@@ -1,0 +1,7 @@
+Week 6: Final Project Pitch
+
+https://www.figma.com/board/pDUGsIYczrIHMUdKWD7yIC/Week-6--Final-Project-Pitch?t=hPaY7QuX06zeVSzj-1
+
+Questions!
+1) I plan to have both the “splitter” and “tracker” in the same HTML file. Is it better to use JavaScript to toggle a CSS class to toggle between the two views, or should I create two separate HTML pages?
+2) For the budget tracker, if the user refreshes the page, I’m pretty sure their list will disappear. Should I look into local storage to save their list, or is it okay if the data resets for this project?
