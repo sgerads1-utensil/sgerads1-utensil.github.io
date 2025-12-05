@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finance Buddy</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="app-container">
+        <header>
+            <h1>Finance Buddy</h1>
+        </header>
+
+        <div class="nav-toggle">
+            <button id="btn-split" class="toggle-btn active" onclick="switchTab('split')">Split Bill</button>
+            <button id="btn-budget" class="toggle-btn" onclick="switchTab('budget')">Budget Tracker</button>
+        </div>
+
+        <div id="splitter-view" class="view-section">
+            
+            <div class="input-group">
+                <label>Total Bill ($)</label>
+                <input type="number" id="billTotal" placeholder="0.00">
+            </div>
+
+            <div class="input-group">
+                <label>Tip Percentage</label>
+                <div class="tip-buttons">
+                    <!--this makes it so I don't have to write separate functions for each tip button-->
+                    <!--so the js knows what button was clicked and can highlight it-->
+                    <button class="tip-btn" onclick="setTip(0.10, this)">10%</button>
+                    <button class="tip-btn" onclick="setTip(0.15, this)">15%</button>
+                    <button class="tip-btn" onclick="setTip(0.20, this)">20%</button>
+                    <input type="number" id="customTip" placeholder="Custom %" oninput="setCustomTip()">
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label>Number of People</label>
+                <div class="people-controls">
+                    <button onclick="updatePeople(-1)">-</button>
+                    <span id="peopleCount">2</span>
+                    <button onclick="updatePeople(1)">+</button>
+                </div>
+            </div>
+
+            <div class="result-box">
+                <p>Each Person Pays</p>
+                <h2 id="splitResult">$0.00</h2>
+            </div>
+        </div>
+
+        <div id="tracker-view" class="view-section hidden">
+            
+            <div class="summary-card">
+                <p>Total Spent Today</p>
+                <h2 id="totalSpent">$0.00</h2>
+            </div>
+
+            <div class="add-expense-row">
+                <input type="text" id="expenseName" placeholder="Item Name (e.g. Coffee)">
+                <input type="number" id="expenseAmount" placeholder="$ Cost">
+                <button id="addBtn" onclick="addExpense()">+ Add</button>
+            </div>
+
+            <div class="expense-list-container">
+                <h3>Expense List:</h3>
+                <ul id="expenseList">
+                    </ul>
+                <button onclick="clearData()" class="reset-link">Reset All Data</button>
+            </div>
+
+        </div>
+            
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

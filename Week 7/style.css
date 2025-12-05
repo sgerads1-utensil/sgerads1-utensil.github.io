@@ -1,0 +1,209 @@
+:root {
+    --primary-color: #e85d04;
+    --bg-color: #F8F9FA;
+    --text-color: #333;
+    --card-bg: #FFFFFF;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #e5e5e5;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.app-container {
+    background-color: var(--bg-color);
+    width: 100%;
+    max-width: 800px; /* intentionally limited */
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    padding: 20px;
+    overflow: hidden;
+}
+
+/* Header */
+header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 15px;
+    border-radius: 12px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+/* Navigation Toggle Pills */
+.nav-toggle {
+    display: flex;
+    background-color: #ddd;
+    border-radius: 50px;
+    padding: 5px;
+    margin-bottom: 25px;
+}
+
+.toggle-btn {
+    flex: 1;
+    border: none;
+    background: transparent;
+    padding: 10px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: 600;
+    color: #666;
+    transition: 0.3s;
+}
+
+.toggle-btn.active {
+    background-color: white;
+    color: var(--text-color);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Hiding Sections */
+.hidden {
+    display: none;
+}
+
+/* Inputs & Labels */
+.input-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #555;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-sizing: border-box; /* for padding */
+    font-size: 1rem;
+}
+
+/* Bill Splitter */
+.tip-buttons {
+    display: grid; /* tip button is grid for even layout */
+    grid-template-columns: 1fr 1fr 1fr; /* 3 equal columns */
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.tip-btn {
+    background: white;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.tip-btn:hover, .tip-btn.selected {
+    background-color: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+.people-controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: white;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
+
+.people-controls button {
+    background: #eee;
+    border: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.result-box {
+    background-color: #ddd;
+    text-align: center;
+    padding: 20px;
+    border-radius: 12px;
+    margin-top: 30px;
+}
+
+.result-box h2 {
+    margin: 10px 0 0;
+    font-size: 2rem;
+    color: var(--text-color);
+}
+
+/* Budget Tracker */
+.summary-card {
+    background-color: #ddd;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.add-expense-row {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+#addBtn {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 0 15px;
+    cursor: pointer;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    background: white;
+    border-bottom: 1px solid #eee;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.delete-btn {
+    background: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    margin-left: 10px;
+    cursor: pointer;
+    font-size: 0.8rem;
+}
+
+.reset-link {
+    background: none;
+    border: none;
+    color: #666;
+    text-decoration: underline;
+    cursor: pointer;
+    margin-top: 20px;
+    width: 100%;
+}
